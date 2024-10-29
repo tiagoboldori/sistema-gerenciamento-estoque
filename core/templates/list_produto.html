@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% block product %}
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+<h1>Aplicação estoqueWeb Produto</h1> 
+<p>Praesent sapien massa, convallis a pellentesque nec, 
+egestas non nisi. Praesent sapien massa, convallis a 
+pellentesque nec, egestas non nisi. Sed porttitor lectus nibh. 
+Vivamus magna justo, lacinia eget consectetur sed, convallis 
+at tellus. Proin eget to rtor risus. Vivamus suscipit tortor 
+eget felis porttitor volutpat. Nulla porttitor accumsan 
+tincidunt. Nulla porttitor accumsan tincidunt. Vestibulum ante 
+ipsum primis in faucibus orci luctus et ultrices posuere 
+cubilia Curae; Donec velit neque, auctor sit ametaliquam vel, 
+ullamcorper sit amet ligula. Praesent sapien massa, convallis 
+a pellentesque nec, egestas non nisi.</p>
+                                                                                                                                                                                                                                                                                                                                            
+{% for i in produtos %}
+<table>
+    <tr>
+        <th>Produto</th>
+        <th>Cor</th>
+        <th>Preco</th>
+    </tr>
+    <tr>
+        <td>{{i}}</td>
+        <td>{{i.cor}}</td>
+        <td>{{i.preco}}</td>
+    </tr>
+</table>
+    
+
+{% endfor %}
+{% endblock %} 

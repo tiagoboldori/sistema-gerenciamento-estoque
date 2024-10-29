@@ -1,0 +1,9 @@
+{% extends 'base.html' %} 
+{% block product %}
+<h1>Aplicação estoqueWeb Produto</h1> 
+<form action="{% url 'new_produto' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %} 
