@@ -28,5 +28,18 @@ def new_produto(request):
         }
         return render(request, templateName, context)
 
-def update_produto(request):
-    pass
+def update_produto(request, pk):
+    resultado = Produtos.objects.get(pk = pk)
+    form = ProdutoForm()
+    context = {
+        'item':resultado,
+        'form': form,
+        'pk':pk
+    }
+    return render(request, 'update_produto.html', context)
+
+def update(request):
+    if request.method == POST:
+        pass
+    else:
+        redirect('index.html')

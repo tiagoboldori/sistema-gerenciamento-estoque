@@ -21,5 +21,7 @@ from .views import *
 urlpatterns = [
     path('', produto, name='produto'),
     path('list_produto/', list_produto, name='list_produto'),
-    path('new_produto/', new_produto, name='new_produto')
+    path('new_produto/', new_produto, name='new_produto'),
+    path('update_produto/<int:pk>', update_produto, name = 'update_produto'),
+    path('update', update, name='update')
 ]
