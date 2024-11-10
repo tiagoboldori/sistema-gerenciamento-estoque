@@ -18,19 +18,21 @@ cubilia Curae; Donec velit neque, auctor sit ametaliquam vel,
 ullamcorper sit amet ligula. Praesent sapien massa, convallis 
 a pellentesque nec, egestas non nisi.</p>
                                                                                                                                                                                                                                                                                                                                             
-{% for i in produtos %}
 <table>
-    <tr>
+   <tr>
         <th>Id</th>
         <th>Produto</th>
         <th>Cor</th>
         <th>Preco</th>
-    </tr>
+        <th>Descrição</th>
+    </tr> 
+    {% for i in produtos %}
     <tr>
         <td>{{i.id}}</td>
         <td>{{i}}</td>
         <td>{{i.cor}}</td>
         <td>{{i.preco}}</td>
+        <td>{{i.descricao}}</td>
         <td><a href="{%url 'update_produto' i.id%}">Alterar Produto<a/></td>
     </tr>
 </table>
