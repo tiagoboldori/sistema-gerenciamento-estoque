@@ -30,16 +30,17 @@ def new_produto(request):
 
 def update_produto(request, pk):
     resultado = Produtos.objects.get(pk = pk)
-    form = ProdutoForm()
-    context = {
-        'item':resultado,
-        'form': form,
-        'pk':pk
-    }
-    return render(request, 'update_produto.html', context)
-
-def update(request):
-    if request.method == POST:
-        pass
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance = resultado)
+        if form.is_valid():
+            form.save()
+            return redirect('index.html')
     else:
-        redirect('index.html')
+        form = ProdutoForm()
+        context = {
+            'item':resultado,
+            'form': form,
+            'pk':pk
+        }
+        return render(request, 'update_produto.html', context)
+

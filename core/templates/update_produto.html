@@ -2,7 +2,7 @@
 {% block product %}
 <h1>Aplicação estoqueWeb Produto</h1>
 {{item.preco}}
-<form action="{% url 'update_produto/' %}" method="POST">
+<form action="{% url 'update_produto' pk %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
