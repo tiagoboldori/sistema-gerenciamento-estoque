@@ -1,9 +1,34 @@
 {% extends 'base.html' %} 
 {% block product %}
-<h1>Aplicação estoqueWeb Produto</h1> 
-<form action="{% url 'new_produto' %}" method="POST">
+</br>
+</br>
+<h1 class="title">Cadastrando novo produto</h1> 
+<form style = ""class="is-centered container" action="{% url 'new_produto' %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
+    <div class="field">
+      Nome do produto:
+      <div class="control">
+        {{form.produto}}
+      </div>
+    </div>
+    <div class="field">
+      Descrição:
+      <div class="control">
+        {{form.descricao}}
+      </div>
+    </div>
+    <div class="field">
+      Cor:
+      <div class="control">
+        {{form.cor}}
+      </div>
+    </div>
+    <div class="field">
+      Preço:
+      <div class="control">
+        {{form.preco}}
+      </div>
+    </div>    </br>
+    <input class="is-centered" type="submit" value="Submit">
 </form>
-{% endblock %} 
+{{% endblock %} 

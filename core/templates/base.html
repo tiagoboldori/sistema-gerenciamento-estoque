@@ -10,10 +10,9 @@
 <meta name="viewport" content="width=device-width, 
 initial-scale=1.0">  
 </head> 
-<body> 
+<body class="has-text-centered"> 
 
   <a href="{% url 'index'%}">Inicio / </a>
-  <a href="{% url 'produto'%}">Produtos / </a>
   <a href="{% url 'list_produto'%}">Todos os Produtos / </a>
   <a href="{% url 'new_produto'%}">Cadastrar Produto</a>
 {% block product %}{% endblock %} 

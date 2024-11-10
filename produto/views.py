@@ -34,7 +34,7 @@ def update_produto(request, pk):
         form = ProdutoForm(request.POST, instance = resultado)
         if form.is_valid():
             form.save()
-            return redirect('index.html')
+            return redirect('list_produto.html')
     else:
         form = ProdutoForm()
         context = {
