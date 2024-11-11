@@ -10,32 +10,33 @@
 {{item.descricao}}, R$
 {{item.preco}}
 </h2>
-<form style = ""class="is-centered container" action="{% url 'update_produto' pk %}" method="POST">
+<form autocomplete="off" style = "" class="is-centered container" action="{% url 'update_produto' pk %}" method="POST">
     {% csrf_token %}
-    <div class="field">
+    <div class="">
       Novo nome do produto:
       <div class="control">
         {{form.produto}}
       </div>
     </div>
-    <div class="field">
+    <div class="">
       Nova descrição:
       <div class="control">
         {{form.descricao}}
       </div>
     </div>
-    <div class="field">
+    <div class="">
       Nova cor:
       <div class="control">
         {{form.cor}}
       </div>
     </div>
-    <div class="field">
+    <div class="">
       Novo Preço:
       <div class="control">
         {{form.preco}}
       </div>
-    </div>    </br>
+    </div>    
+    </br>
     <input class="is-centered" type="submit" value="Submit">
 </form>
 {% endblock %} 
