@@ -19,10 +19,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', produto, name='produto'),
-    path('list_produto/', list_produto, name='list_produto'),
-    path('new_produto/', new_produto, name='new_produto'),
-    path('update_produto/<int:pk>', update_produto, name = 'update_produto'),
-    path('remove_produto/<int:pk>', remove_produto, name = 'remove_produto'),
-
+    path('', list_entrada, name='list_entrada'),
+    #path('update_produto/<int:pk>',update_produto, name='update_produto')
 ]
