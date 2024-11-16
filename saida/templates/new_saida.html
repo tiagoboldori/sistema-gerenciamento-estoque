@@ -18,33 +18,25 @@ a pellentesque nec, egestas non nisi.</p>
 </br>
 </br>
                                                                                                                                                                                                                                                                                                                                             
-<table class="table container has-text-left">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Produto</th>
-        <th>Preco</th>
-        <th>Quantidade</th>
-        <th>Descrição</th>
-        <th>Modificado</th>
-    </tr>
-    </thead>
-    {% for i in entradas %}
-    <tbody>
-    <tr>
-        <td>{{i.id}}</td>
-        <td>{{i.produto}}</td>
-        <td>{{i.preco}}</td>
-        <td>{{i.quantidade}}
-        <td>{{i.modificado}}</td>
-        <td><a class="tag" href="{%url 'update_produto' i.id%}">Alterar</a></td>
-        <td><a class="tag" href="{%url 'remove_produto' i.id%}">Remover</a></td>
 
-    </tr>
-    </tbody>
-    {% endfor %}
-</table>
-    
+<form action='{%url 'new_entrada'%}' method='POST'>
+  {%csrf_token%}
+  <div>
+    Selecione o Produto para dar entrada:
+    <div class="control">{{form.produto}}</div>
+  </div>
+  <div>
+    Quantidade:
+    <div class="control">{{form.quantidade}}</div>
+  </div>
+  <div>
+    Preço:
+    <div class="control">{{form.preco}}</div>
+  </div>
+
+  <input type="submit" value='submit' >
+</form>
+
 
 
 {% endblock %} 

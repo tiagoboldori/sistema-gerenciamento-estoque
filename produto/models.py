@@ -12,6 +12,8 @@ class Cores(models.Model):
         verbose_name_plural = 'Cores'
     
 
+
+
 class Produtos(models.Model):
 
     produto = models.CharField('Produto', max_length=200) 

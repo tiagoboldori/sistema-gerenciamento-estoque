@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+{% block product %}
+
+</br>
+</br>
+<h1 class="title">Aplicação estoqueWeb</h1> 
+<p>Praesent sapien massa, convallis a pellentesque nec, 
+egestas non nisi. Praesent sapien massa, convallis a 
+pellentesque nec, egestas non nisi. Sed porttitor lectus nibh. 
+Vivamus magna justo, lacinia eget consectetur sed, convallis 
+at tellus. Proin eget to rtor risus. Vivamus suscipit tortor 
+eget felis porttitor volutpat. Nulla porttitor accumsan 
+tincidunt. Nulla porttitor accumsan tincidunt. Vestibulum ante 
+ipsum primis in faucibus orci luctus et ultrices posuere 
+cubilia Curae; Donec velit neque, auctor sit ametaliquam vel, 
+ullamcorper sit amet ligula. Praesent sapien massa, convallis 
+a pellentesque nec, egestas non nisi.</p>
+</br>
+</br>
+                                                                                                                                                                                                                                                                                                                                            
+<table class="table container has-text-left">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Produto</th>
+        <th>Cor</th>
+        <th>Preco</th>
+        <th>Quantidade</th>
+        <th>Descrição</th>
+        <th>Modificado</th>
+    </tr>
+    </thead>
+    {% for i in produtos %}
+    <tbody>
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i}}</td>
+        <td>{{i.cor}}</td>
+        <td>{{i.preco}}</td>
+        <td>{{i.quantidade}}</td>
+        <td>{{i.descricao}}</td>
+        <td>{{i.modificado}}</td>
+        <td><a class="tag" href="{%url 'update_produto' i.id%}">Alterar</a></td>
+        <td><a class="tag" href="{%url 'remove_produto' i.id%}">Remover</a></td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+    
+
+
+{% endblock %} 

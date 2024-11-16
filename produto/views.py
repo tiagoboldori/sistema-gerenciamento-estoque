@@ -8,7 +8,7 @@ def produto(request):
     return render(request, 'produto.html')
 
 def list_produto(request):
-    produtos = Produtos.objects.all()
+    produtos = Produtos.objects.all().order_by('-id')
     templateName = 'list_produto.html'
     context = {
         'produtos': produtos,   

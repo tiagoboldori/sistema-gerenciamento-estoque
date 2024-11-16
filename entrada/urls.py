@@ -20,5 +20,7 @@ from .views import *
 
 urlpatterns = [
     path('', list_entrada, name='list_entrada'),
+    path('new_entrada',new_entrada, name="new_entrada"),
+    path('remove_entrada/<int:pk>', remove_entrada, name="remove_entrada")
     #path('update_produto/<int:pk>',update_produto, name='update_produto')
 ]
