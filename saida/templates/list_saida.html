@@ -35,11 +35,9 @@ a pellentesque nec, egestas non nisi.</p>
         <td>{{i.id}}</td>
         <td>{{i.produto}}</td>
         <td>{{i.preco}}</td>
-        <td>{{i.quantidade  %}
-        
-        {% endwith %}dade}}
+        <td>{{i.quantidade}}
         <td>{{i.modificado}}</td>
-        <td><a class="tag" href="{%url 'remove_entrada' i.id%}">Remover</a></td>
+        <td><a class="tag" href="{%url 'remove_saida' i.id%}">Remover</a></td>
 
     </tr>
     </tbody>

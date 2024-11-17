@@ -4,10 +4,10 @@
 </br>
 <h1 class="title">Alterando produto</h1>
 </br>
-<h2 class="title is-4">
-{{item}},
-{{item.cor}},
-{{item.descricao}}, R$
+<h2 class="title is-6">
+Alterando: {{item}},
+da cor {{item.cor}},
+descricao: {{item.descricao}}, R$
 {{item.preco}}
 </h2>
 <form autocomplete="off" style = "" class="is-centered container" action="{% url 'update_produto' pk %}" method="POST">
@@ -39,4 +39,10 @@
     </br>
     <input class="is-centered" type="submit" value="Submit">
 </form>
+<script>
+  document.getElementById('id_produto').value = "{{item}}";
+  document.getElementById('id_descricao').value = "{{item.descricao}}";
+  document.getElementById('id_preco').value = "{{item.preco}}";
+</script>
+
 {% endblock %} 
