@@ -17,8 +17,7 @@ def new_saida(request):
         form = SaidasForm(request.POST)
         if form.is_valid():
             form.save(commit=False)
-            if form.cleaned_data['produto'].quantidade > form.cleaned_data['quantidade']:
-
+            if form.cleaned_data['produto'].quantidade >= form.cleaned_data['quantidade']:
                 form.cleaned_data['produto'].quantidade -= form.cleaned_data['quantidade']
                 form.cleaned_data['produto'].save_base()
                 form.save()

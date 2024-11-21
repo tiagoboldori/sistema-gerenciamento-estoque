@@ -16,11 +16,22 @@ def new_entrada(request):
     if request.method == 'POST':
         form = EntradasForm(request.POST)
         if form.is_valid():
+            flag = False
             form.save(commit=False)
             form.cleaned_data['produto'].quantidade += form.cleaned_data['quantidade']
+            if form.cleaned_data['preco'] == 0:
+                flag = True
+                form.cleaned_data['preco'] = form.cleaned_data['produto'].preco
+                price = form.cleaned_data['produto'].preco
             form.cleaned_data['produto'].preco = form.cleaned_data['preco']
             form.cleaned_data['produto'].save_base()
-            form.save()
+
+            temp = form.save()
+            
+            if flag:
+                result = Entradas.objects.get(pk=temp.id)
+                result.preco = price
+                result.save()
             return redirect('list_entrada')
     else:
         form = EntradasForm()
