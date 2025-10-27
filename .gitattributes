@@ -1,21 +1,11 @@
 *.py linguist-language=Python
 
-templates/*.html linguist-vendored
+
 
 static/*.css linguist-vendored
 static/*.js linguist-vendored
 static/*.min.js linguist-generated
 static/*.scss linguist-vendored
-
-*/migrations/*.py linguist-vendored
-
-*.pyc linguist-generated
-__pycache__/* linguist-generated
-build/* linguist-generated
-dist/* linguist-generated
-
-*.md linguist-documentation
-README.* linguist-documentation
 
 *.css linguist-vendored
 *.html linguist-vendored
